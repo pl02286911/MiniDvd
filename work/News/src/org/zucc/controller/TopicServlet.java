@@ -28,7 +28,22 @@ public class TopicServlet extends HttpServlet {
 		
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html;charset=utf-8");
-
+		
+		String name =req.getParameter("name");
+		Topic topic =new Topic();	
+		topic.setName(name);
+		
+		if(topicService.topicAdd(topic)){
+			resp.sendRedirect("news.do?flag=list");
+		}else{
+			resp.getWriter().write("×¢²áÊ§°Ü");
+			
+		}
+		
+		
+	}
+	/*private void addTopic(HttpServletRequest req, HttpServletResponse resp)
+	throws ServletException, IOException {
 		String name =req.getParameter("name");
 		Topic topic =new Topic();	
 		topic.setName(name);
@@ -42,5 +57,9 @@ public class TopicServlet extends HttpServlet {
 		
 		
 	}
+	private void updateTopic(HttpServletRequest req, HttpServletResponse resp)
+	throws ServletException, IOException {
+		
+	}*/
 
 }

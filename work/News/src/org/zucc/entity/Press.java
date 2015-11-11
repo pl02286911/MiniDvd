@@ -7,6 +7,7 @@ public class Press {
 		private String summary;
 		private String content;
 		private String imgUrl;
+		private String author;
 		public int getId() {
 			return id;
 		}
@@ -42,6 +43,12 @@ public class Press {
 		}
 		public void setImgUrl(String imgUrl) {
 			this.imgUrl = imgUrl;
+		}
+		public String getAuthor() {
+			return author;
+		}
+		public void setAuthor(String author) {
+			this.author = author;
 		}
 		
 		

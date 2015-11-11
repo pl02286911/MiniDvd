@@ -44,7 +44,7 @@ public class UserServlet extends HttpServlet {
 		user.setName(name);
 		user.setPassword(password);
 		if(userService.login(user)){
-			resp.sendRedirect("index.jsp");
+			resp.sendRedirect("topicAdd.jsp");
 		}else{
 			resp.sendRedirect("login.jsp");
 		}

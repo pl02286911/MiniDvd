@@ -28,17 +28,20 @@ public class TopicDao extends BaseDao {
 		
 	}
 	
-	public int findTopicByName(String name){
-		int count=0;
+	public Topic findTopicByName(String name){
+		Topic topic=null;
 		 try {
 				initConn();
-				String str ="select count(*) as num from topic where name =?";
+				String str ="select * from topic where name =?";
 				psmt = con.prepareStatement(str);
 			    psmt.setString(1, name);
 			
 			      rs = psmt.executeQuery();		
 					if(rs.next()){
-						count = rs.getInt("num");
+						topic=new Topic();
+						topic.setId(rs.getInt("id"));
+						topic.setName(rs.getString("name"));
+						
 					}		
 					
 			} catch (SQLException e) {
@@ -49,7 +52,7 @@ public class TopicDao extends BaseDao {
 				myClose();
 				}
 			
-			return count;
+			return topic;
 		
 	}
 	public List<Topic> findAll(){

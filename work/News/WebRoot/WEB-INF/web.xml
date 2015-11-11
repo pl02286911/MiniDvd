@@ -35,6 +35,10 @@
   		<url-pattern>/addtopic.do</url-pattern>
   		
   </servlet-mapping>
+    <servlet-mapping>
+  		<servlet-name>topic</servlet-name>
+  		<url-pattern>/updatetopic.do</url-pattern>	
+  </servlet-mapping>
    <servlet>
   		<servlet-name>press</servlet-name>
   		<servlet-class>org.zucc.controller.PressServlet</servlet-class>
@@ -42,7 +46,8 @@
   
   <servlet-mapping>
   		<servlet-name>press</servlet-name>
-  		<url-pattern>/addnews.do</url-pattern>
+  		<url-pattern>/news.do</url-pattern>
   		
   </servlet-mapping>
+ 
 </web-app>
